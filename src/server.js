@@ -1,8 +1,10 @@
 const express = require('express');
 const mongose = require('mongoose');
-const path  = require('path');
+
+const filePath  = require('../src/config/fileConfig');
 const connectString = require('./config/dbconfig');
 const cors = require('cors');
+
 
 mongose.connect(connectString, {
     useNewUrlParser: true
@@ -30,12 +32,10 @@ app.use((req,res, next)=>{
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/files',express.static(path.resolve(__dirname, '..', 'tmp')));
+app.use('/files',express.static(filePath));
 app.use(require('./routes'));
 
 
-server.listen(process.env.PORT || 3001,()=>{
-    console.log("Server on in port 3001")
-});
+server.listen(process.env.PORT || 3001);
 
 
