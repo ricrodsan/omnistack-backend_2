@@ -4,8 +4,9 @@ const multerConfig = require('./config/muter');
 
 const routes = express.Router();
 
-const boxController  = require("./controllers/Boxcontroller");
 const fileController  = require("./controllers/FileController");
+const boxController   = require("./controllers/Boxcontroller");
+
 
 routes.post('/boxes',  boxController.store);
 routes.get('/boxes',  boxController.getAll);
