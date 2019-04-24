@@ -4,7 +4,7 @@ const multerConfig = require('./config/muter');
 
 const routes = express.Router();
 
-const fileController  = require("./controllers/FileController");
+const fileController  = require("./controllers/Filecontroller");
 const boxController   = require("./controllers/Boxcontroller");
 
 
